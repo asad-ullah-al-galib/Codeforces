@@ -10,7 +10,3 @@ int main()
         printf("%c is a upper case",ch);
     }
 }
-
-
-
-
