@@ -35,3 +35,4 @@ typedef long long int ll;
     cout<<(res+1)/2<<endl;
 
  }
+ 

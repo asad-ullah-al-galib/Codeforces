@@ -1,4 +1,3 @@
-
 //             +-- -- --++-- +-In the name of ALLAH-+ --++-- -- --+
 /**
 * author:TheAnonymousAMGR
@@ -32,16 +31,18 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 int main()
 {
-	tc
-	{ 
-		ni
-	    str
-		int ans = (s[0] == '@');
-        loop1
-		{
-        if (s[i] == '*' && s[i - 1] == '*') break;
-        ans += (s[i] == '@');
-        }
-	    cout<<ans<<endl;
-	}
+    nl
+    //array(arr)
+    //vec(v);
+    //sort(arr,arr+n);
+    //srt(v);
+    ll a[n];
+    for(int i=1;i<=n;i++) cin>>a[i];
+    sort(a+1,a+n+1);
+    ll j=1; ll res=0;
+    for(ll i=1;i<=n;i++)
+    {
+        if(a[i]>a[j]) res++,j++;
+    }
+    cout<<res<<endl;
 }
