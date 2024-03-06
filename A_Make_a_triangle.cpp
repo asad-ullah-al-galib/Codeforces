@@ -31,24 +31,16 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    int n,m;
-    cin>>n>>m;
-    vec(v);
-    srt(v);
-    ll sum=0,res=0;
-    loop 
-    { 
-       sum+=v[i];
-       if(sum<=m)
-       {
-          res+=(m-sum)/(i+1)+1;
-       }
+    int a[3];
+    for(int i=0;i<3;i++)
+    {
+        cin>>a[i];
     }
-    cout<<res<<endl;
+    sort(a,a+3);
+    cout<<max(0,a[2]-a[1]-a[0]+1)<<endl;
 }
 int main()
 {
     AMGR();
-    tc
     answer();
 }

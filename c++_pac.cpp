@@ -35,12 +35,19 @@ void answer()
     // cin>>r;
     // area=pow(r,2)*PI;
     // cout<<area<<endl;
-     str;
-     string atrr;
-     cin>>atrr;
+    //  str;
+    //  string atrr;
+    //  cin>>atrr;
      
-    string st=atrr.append(s);
-    cout<<st;
+    // string st=atrr.append(s);
+    // cout<<st;
+    int a[3];
+    for(int i=0;i<3;i++)
+    {
+        cin>>a[i];
+    }
+    sort(a,a+3);
+    cout<<max(0,a[2]-a[1]-a[0]+1)<<endl;
 }
 int main()
 {

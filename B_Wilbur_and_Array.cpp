@@ -22,6 +22,7 @@ typedef long long int ll;
 #define tc int tc;cin>>tc;while(tc--)
 #define array(arr) int arr[n];for(int i=0;i<n;i++)cin>>arr[i];
 #define vec(v) vector<int>v(n);for(int i=0;i<n;i++)cin>>v[i];
+#define fol cout<<res<<endl;
 #define srt(v) sort(v.begin(),v.end());
 #define rsrt(v) sort(v.rbegin(),v.rend());
 #define gcd(a,b) __gcd(a,b)
@@ -31,20 +32,14 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    int n,m;
-    cin>>n>>m;
+    ni;
     vec(v);
-    srt(v);
-    ll sum=0,res=0;
-    loop 
-    { 
-       sum+=v[i];
-       if(sum<=m)
-       {
-          res+=(m-sum)/(i+1)+1;
-       }
+    ll res=abs(v[0]);
+    loop1
+    {
+        res+=abs(v[i]-v[i-1]);
     }
-    cout<<res<<endl;
+    fol(res);
 }
 int main()
 {
