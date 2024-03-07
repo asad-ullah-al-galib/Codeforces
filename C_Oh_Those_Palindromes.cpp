@@ -31,40 +31,14 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    // double r,area;
-    // cin>>r;
-    // area=pow(r,2)*PI;
-    // cout<<area<<endl;
-    //  str;
-    //  string atrr;
-    //  cin>>atrr;
-     
-    // string st=atrr.append(s);
-    // cout<<st;
-    // int a[3];
-    // for(int i=0;i<3;i++)
-    // {
-    //     cin>>a[i];
-    // }
-    // sort(a,a+3);
-    // cout<<max(0,a[2]-a[1]-a[0]+1)<<endl;
-
-    int n,k,res=0;
-    cin>>n>>k;
-
-    while(n--)
-    {
-        int j;
-        cin>>j;
-        if(j%k==0)
-        {
-            res++;
-        }
-    }
-    cout<<res<<endl;
+    ni;
+    str;
+    sort(s.begin(),s.end());
+    cout<< s <<endl;
 }
 int main()
 {
     AMGR();
+    //tc
     answer();
 }
