@@ -188,7 +188,7 @@ void grocery()
     system("cls");
     printf("\033[0;37m");
     printf(COLOR_BOLD "                 MAYER DOA ONLINE SUPERSHOP                 " COLOR_OFF);
-    printf("\nccccc");
+    printf("\nProduct list: ");
     printf("\nName\t\tquantity\t\tprice");
     if (suger > 0)
     {
@@ -220,11 +220,11 @@ void grocery()
     }
     if (chilli_powder > 0)
     {
-        printf("\nChilli powder\t\t%d\t\t%d", chilli_powder, chp);
+        printf("\nChilli powder\t%d\t\t%d", chilli_powder, chp);
     }
     if (cooking_oil > 0)
     {
-        printf("\nCooking oil\t\t%d\t\t%d", cooking_oil, co);
+        printf("\nCooking oil\t%d\t\t%d", cooking_oil, co);
     }
     if (tejpata > 0)
     {
@@ -244,7 +244,7 @@ void grocery()
     }
     if (tissue_paper > 0)
     {
-        printf("\nTissue paper\t\t%d\t\t%d", tissue_paper, tip);
+        printf("\nTissue paper\t%d\t\t%d", tissue_paper, tip);
     }
     printf("\nPlease pay tk %lld", grocery_total);
     printf("\nChoose Payment Method: ");
@@ -362,7 +362,7 @@ void cosmetics()
     system("cls");
     printf("\033[0;37m");
     printf(COLOR_BOLD "                 MAYER DOA ONLINE SUPERSHOP                 " COLOR_OFF);
-    printf("\nBBBBB");
+    printf("\nProduct List: ");
     printf("\nName\t\tquantity\t\tprice");
     if (body_soap > 0)
     {
@@ -490,7 +490,6 @@ void bevarage()
     int thu;
     int f;
     int mo;
-
     pep = 30 * pepsi;
     spr = 35 * sprite;
     cok = 30 * coke;
@@ -502,6 +501,7 @@ void bevarage()
     system("cls");
     printf("\033[0;37m");
     printf(COLOR_BOLD "                 MAYER DOA ONLINE SUPERSHOP                 " COLOR_OFF);
+    printf("\nProduct List: ");
     printf("\nName\t\tquantity\t\tprice");
     if (pepsi > 0)
     {

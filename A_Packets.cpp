@@ -33,16 +33,18 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    ll a,b,c;
-    cin>>a>>b>>c;
-    c %=3;
-    if(c==0)cout<<a<<endl;
-    else if(c==1)cout<<b<<endl;
-    else cout<<(a^b)<<endl;
+    ni;
+    int res=0;
+    while(n)
+    {
+        res++;
+        n/=2;
+    }
+    cout<<res<<endl;
 }
 int main()
 {
     AMGR();
-    tc
+    //tc
     answer();
 }

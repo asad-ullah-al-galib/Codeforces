@@ -33,16 +33,36 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    ll a,b,c;
-    cin>>a>>b>>c;
-    c %=3;
-    if(c==0)cout<<a<<endl;
-    else if(c==1)cout<<b<<endl;
-    else cout<<(a^b)<<endl;
+    int n,s,res=0;
+    cin>>n>>s;
+    array(a);
+    sort(a,a+n);
+
+    if(s>a[n/2])
+    { 
+    for(int i=n/2;i<n;i++)
+    {
+        // if(a[i]<s)
+        // {
+        //     res++;
+        // }
+        res+=max(s-a[i],0);
+    }
+    } else { 
+    for(int i=0;i<=n/2;i++)
+    {
+        // if(a[i]<s)
+        // {
+        //     res++;
+        // }
+        res+=max(a[i]-s,0);
+    }
+    }
+    cout<<res<<endl;
 }
 int main()
 {
     AMGR();
-    tc
+    //tc
     answer();
 }
