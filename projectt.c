@@ -111,7 +111,7 @@ int itemlist()
     printf("\033[0;34m");
     printf(COLOR_BOLD "\n\n\n\n1. Grocery" COLOR_OFF);
     printf("\033[0;34m");
-    printf(COLOR_BOLD "\n2.Cosmetics" COLOR_OFF);
+    printf(COLOR_BOLD "\n2. Cosmetics" COLOR_OFF);
     printf("\033[0;34m");
     printf(COLOR_BOLD "\n3. Beverage" COLOR_OFF);
     printf("\033[0;37m"); // white

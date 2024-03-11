@@ -34,20 +34,13 @@ typedef long long int ll;
 void answer()
 {
     ni;
-    int dhor,res=0;
-    if(n%2==0)cout<<"0"<<endl;
-    else 
+    array(a);
+    int res=0;
+    loop 
     {
-        dhor=n;
-        while(dhor>=10)
-        {
-            dhor/=10;
-            if(dhor%2==0)res++;
-        }
-        if(dhor%2==0)cout<<"1"<<endl;
-        else if(res>0) cout<<"2"<<endl;
-        else cout<<"-1"<<endl;
+        if(a[i]==i+1)res++;
     }
+    cout<<(res+1)/2<<endl;
 }
 int main()
 {
