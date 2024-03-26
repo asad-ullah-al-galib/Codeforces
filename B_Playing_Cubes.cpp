@@ -37,7 +37,6 @@ void answer()
     cin>>n>>m;
     int res = n + m;
     if (n < m) n = m;
-    //printf("%d %d\n", n - 1, s - n);
     cout<<n-1<<" "<<res-n;
 }
 int main()

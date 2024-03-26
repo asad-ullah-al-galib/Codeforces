@@ -31,23 +31,33 @@ typedef long long int ll;
 #define ub upper_bound
 #define pr pair<int,int>
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
+#define dd 100100
+int a[dd];
 void answer()
 {
-    ni;
-    vec(v);
-    srt(v);
-    int mid=(n-1)/2;
-    int midd = mid; int res=0;
-    while (midd<n && v[midd]==v[mid])
+    int n,m;
+    cin>>n>>m;
+    int tot=0;
+    for(int i=0;i<m;i++)
     {
-        midd++;
-        res++;
+        cin>>a[i];
+        tot+=a[i];
     }
-    cout<<res<<endl;
+    bool res;
+    if(n%2==0)
+    {
+        res=a[m-1]%2;
+    }
+    else res=tot%2;
+    if(res)
+    {
+        cout<<"odd"<<endl;
+    }
+    else cout<<"even"<<endl;
 }
 int main()
 {
     AMGR();
-    tc
+    //tc
     answer();
 }

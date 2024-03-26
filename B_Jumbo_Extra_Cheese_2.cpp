@@ -34,15 +34,20 @@ typedef long long int ll;
 void answer()
 {
     ni;
-    vec(v);
-    srt(v);
-    int mid=(n-1)/2;
-    int midd = mid; int res=0;
-    while (midd<n && v[midd]==v[mid])
+    vec(a);
+    vec(b);
+    int res=0;
+    loop 
     {
-        midd++;
-        res++;
+        cin>>a[i]>>b[i];
+        if(a[i]>b[i])
+        {
+            swap(a[i],b[i]);
+        }
+        res+=a[i];
     }
+    res+= *max_element(b.begin(), b.end());
+    res*=2;
     cout<<res<<endl;
 }
 int main()
