@@ -31,54 +31,19 @@ typedef long long int ll;
 #define ub upper_bound
 #define pr pair<int,int>
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
-//const int N=1100;
-// bool vowel(char c)
-// {
-//     return c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||c=='y';
-// }
-
+void answer()
+{
+    tc 
+    { 
+    int n,a,b;
+    cin>>n>>a>>b;
+    if(a==n and b==n) { cout<<"Yes"<<endl;continue;}
+    if(a+b<n-1){cout<<"Yes"<<endl; continue;}
+    cout<<"No"<<endl;
+    }
+}
 int main()
 {
-    // AMGR();
-    // ni;
-    // int v[N];
-    // for(int i=0;i<n;i++)
-    // {
-    //     cin>>v[i];
-    // }
-    // str(s);
-    // loop
-    // {
-    //     cin>>s;
-    //     for (char c : s)
-	// 		if (vowel(c))
-	// 			v[i]--;
-	// 	if (v[i] != 0)
-	// 	{
-	// 		cout << "NO"<<endl;
-	// 		return 0;
-	// 	}
-    // }
-    // cout<<"YES"<<endl;
-    // return 0;
-    ni;
-    vector<int>v;
-    for(int i=0;i<n;i++)
-    {
-        cin>>v[i];
-    }
-    string s;
-    getline(cin,s);
-    loop 
-    {
-        getline(cin,s);
-        int count =0;
-        for(char j : s) if(j=='a' || j=='e' || j=='i' || j=='o' || j=='u' || j=='y') count++;
-        if(count != v[i]) 
-        {
-            cout<<"NO";
-            return 0;
-        }
-    }
-    cout<<"YES";
+    AMGR();
+    answer();
 }

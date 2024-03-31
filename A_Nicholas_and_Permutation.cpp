@@ -31,10 +31,12 @@ typedef long long int ll;
 #define ub upper_bound
 #define pr pair<int,int>
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
-int n, a[1001],ans;
-void answer()
+int const N=100+20;
+int n, a[N],ans;
+int main()
 {
-    loop
+    cin>>n;
+    for(int i=0;i<n;i++)
     {
         cin >> a[i];
         if (a[i] == 1 || a[i] == n)
@@ -44,10 +46,4 @@ void answer()
         }
     }
     cout<<ans;
-}
-int main()
-{
-    AMGR();
-    //tc
-    answer();
 }
