@@ -31,65 +31,27 @@ typedef long long int ll;
 #define ub upper_bound
 #define pr pair<int,int>
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
-
-// int jogfol(string n) {
-//     int res = 0;
-//     for (char c : n) {
-//         res += c - '0';
-//     }
-//     return res;
-// }
 void answer()
 {
-    //b
-//     int n,pola,dol;
-//     cin>>n>>pola>>dol;
-//     int maiya=n-pola;
+    int n;
+    str(s);
+    n=s.size();
 
-//     int res=pola%dol;
-//     int ress=maiya%dol;
-
-//     cout<<abs(ress-res)<<endl;
-//c
-//  string S, T;
-//     cin >> S >> T;
-//     vector<int> pos;
-//     int j = 0;
-//     int n=T.size();
-//     int nn=S.size();
-//     loop {
-//         if (T[i] == S[j]) {
-//             pos.pb(i + 1);
-//             j++;
-//         }
-//         if (j == nn) break;
-//     }
-//     for (int i = 0; i < pos.size(); i++) {
-//         cout << pos[i] << " ";
-//     }
-
-//d
-// string n;
-// cin >> n;
-// int count = 0;
-// while (n.length() > 1) 
-// {
-//     n = to_string(jogfol(n));
-//     count++;
-// }
-// cout << count << endl;
-// }
-ll eka,gay,gayy;
-cin>>eka>>gay>>gayy;
-ll n=gay/3;ll nn=eka;
-nn+=n;
-gay-=(n*3);
-if((gayy+gay) <3 && gay!=0)
-{
-    cout<<-1<<endl;
-    return;
-}
-nn+=(ceil((gayy+gay)/3.0));cout<<nn<<endl;
+    int res=MOD;
+    for(int i=0;i<=n;i++)
+    {
+        int count[2]={};
+        for(int j=0;j<i;j++)
+        {
+            count[s[j]-'0']++;
+        }
+        for(int j=i;j<n;j++)
+        {
+            count[(s[j] - '0') ^ 1]++;
+        }
+        res= min({res,count[0],count[1]});
+    }
+    cout<<res<<endl;
 }
 int main()
 {
