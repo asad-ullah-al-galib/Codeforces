@@ -89,20 +89,244 @@
 //     //tc
 //     answer();
 // }
+// #include<bits/stdc++.h>
+// #include<string>
+// using namespace std;
+// int main()
+// {
+//     string s;
+//     cin>>s;
+//     string ss=strrev(s);
+//     if(s==ss)
+//     {
+//         cout<<"YES"<<endl;
+//     }
+//     else 
+//     {
+//         cout<<"NO"<<endl;
+//     }
+// }
+
+
+
+// stopwatch
+// #include<bits/stdc++.h>
+// #include<ctime>
+// using namespace std;
+
+// class stopwatch
+// {
+//     double begin,end;
+
+//     public:
+//     stopwatch();
+//     ~stopwatch();
+//     void start();
+//     void stop();
+//     void show();
+
+
+// };
+// stopwatch :: stopwatch()
+// {
+//     begin =end = 0.0;
+// }
+// stopwatch :: ~ stopwatch()
+// {
+//     cout<<"stopwatch object being destroyed...";
+//     show();
+// }
+
+// void stopwatch::start()
+// {
+//     begin = (double) clock() / CLOCKS_PER_SEC;
+// }
+
+// void stopwatch :: stop()
+// {
+//     end = (double) clock()/ CLOCKS_PER_SEC;
+// }
+
+// void stopwatch:: show()
+// {
+//     cout<<"Elapsed time: "<<end-begin;
+//     cout<<endl;
+// }
+
+// int main()
+// {
+//     stopwatch watch;
+//     long i;
+//     watch.start();
+//     for(i=0;i,320000;i++)
+//     {
+//         watch.stop();
+//     }
+//     watch.show();
+// }
+
+
 #include<bits/stdc++.h>
-#include<string>
 using namespace std;
+
+class t_and_d
+{
+    time_t systime;
+    public:
+    t_and_d(time_t tm);
+    void show();
+
+};
+t_and_d :: t_and_d(time_t tm)
+{
+    systime=tm;
+}
+void t_and_d::show()
+{
+    cout<<ctime(&systime)<<endl;
+}
 int main()
 {
-    string s;
-    cin>>s;
-    string ss=strrev(s);
-    if(s==ss)
+    time_t tm;
+
+    tm=time(NULL);
+    t_and_d obj(tm);
+    obj.show();
+}
+
+
+
+
+// //number 3.
+#include<iostream>
+using namespace std;
+
+class box {
+    double l,w,h;
+    double volume;
+    public:
+    box(double a,double b, double c);
+    void vol();
+};
+box::box(double a,double b, double c)
+{
+    l=a;
+    w=b;
+    h=c;
+    
+    volume =i*w*h;
+}
+
+void box::vol()
+{
+    cout<<"Volume is: "<<volume<<endl;
+}
+int main()
+{
+    box x(2.2, 3.97,8.09), y(1.0,2.0,3.0);
+    x.vol();
+    y.vol();
+    return 0;
+}
+
+// // number 4
+
+#include<iostream>
+using namespace std;
+
+class prompt {
+    int cnt;
+    public: 
+    prompt (char *c) {cout<<s;cin>>cnt;};
+    ~prompt();
+};
+
+prompt :: ~prompt() {
+    int i,j;
+    for(i=0;i<cnt;i++)
     {
-        cout<<"YES"<<endl;
+        cout<<'\a';
+        for(j=0;j<32000;j++);
     }
-    else 
+}
+int main()
+{
+    prompt ob("Enter a number ");
+    return 0;
+}
+
+// //number 5
+
+#include<iostream>
+#include<cstdlib>
+using namespace;
+
+class dice {
+    int val;
+    public:
+    void roll();
+};
+
+void dice :: roll()
+{
+    val = (rand()%6)+1;//generate 1 through 6
+    cout<<val<<'\n';
+}
+
+int main()
+{
+    dice one, two;
+
+    one.roll();
+    two.roll();
+    one.roll();
+    two.roll();
+    one.roll();
+    two.roll();
+
+    return 0;
+    
+}
+//stopwatch new
+
+#include<unistd.h>
+using namespace std;
+
+int main()
+{
+    short minn,sec; int time;
+
+
+    do
     {
-        cout<<"NO"<<endl;
+        cout<<"Enter seconds:: ";
+        cin>>sec;
+    } while (sec>59);
+    do
+    {
+        cout<<"Enter minutes:: ";
+        cin>>minn;
+    } while (minn>59);
+
+    time=(minn!=0)?minn*60 : 0;
+
+    time +=sec;
+
+    for(int i=time;i>0;i--)
+    {
+        system("clear");
+        system("cls");
+        cout<<"The time remaining is 0: " <<minn<<":"<<sec<<endl;
+
+        minn =(i%60==0)? --minn : minn;
+
+        sec = (sec ==0)? 59 : --sec;
+
+        //system("sleep 1");
+        sleep(1);
     }
+    system("clear");
+
+    cout<<"*******************\nTimer ended! \a\nLasted for " << time <<"seconds"<<"\n***********\n\n\n\n\n"<<endl;
+    
 }
