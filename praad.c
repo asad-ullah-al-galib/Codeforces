@@ -1,15 +1,9 @@
-#include <stdio.h>
-#include <conio.h>
+#include<stdio.h>
 #include<math.h>
 int main()
 {
-    int t, a, b;
-    scanf("%d",&t);
-    while(t--)
-    {
-        scanf("%d%d",&a,&b);
-        printf("%d",a%b);
-
-    }
-    
+    float a,s,d;
+    scanf("%f%f",&a,&s);
+    d = 0.5 * a * s;
+    printf("%f",d);
 }

@@ -34,30 +34,47 @@ typedef long long int ll;
 ll tri[100100];
 int main()
 {
-    for(int i=0;i<100000;i++)
+    // for(int i=0;i<100000;i++)
+    // {
+    //     tri[i]=((ll)i * ((ll)i-1))/2;
+    // }
+    // ll n;
+    // cin;
+    // for(int i=0;i<100000;i++)
+    // {
+    //     int low=0,high=99999;
+    //     while(low <high)
+    //     {
+    //         int mid = (low+high)/2;
+    //         if(tri[i]+tri[mid] < n)
+    //         {
+    //             low=mid+1;
+    //         }
+    //         else high=mid;
+    //     }
+    //     if(tri[i] + tri[low] == n)
+    //     {
+    //         cout<<"YES"<<endl;
+    //         return 0;
+    //     }
+    // }
+    // cout<<"NO"<<endl;
+    // return 0;
+    int n;
+    cin>>n;
+    bool flag=0;
+    int res=0;
+    for(int i=1;i<n;i++)
     {
-        tri[i]=((ll)i * ((ll)i-1))/2;
-    }
-    ll n;
-    cin;
-    for(int i=0;i<100000;i++)
-    {
-        int low=0,high=99999;
-        while(low <high)
+        res+=i;
+        if(res<n)
         {
-            int mid = (low+high)/2;
-            if(tri[i]+tri[mid] < n)
-            {
-                low=mid+1;
-            }
-            else high=mid;
+            int ress=n-res;
+            ress*=2;
+            int resss=sqrt(ress);
+            if(resss*(resss+1)==ress) flag=1;
         }
-        if(tri[i] + tri[low] == n)
-        {
-            cout<<"YES"<<endl;
-            return 0;
-        }
+        else break;
     }
-    cout<<"NO"<<endl;
-    return 0;
+    cout<<(flag? "YES" : "NO");
 }

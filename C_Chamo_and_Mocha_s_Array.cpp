@@ -1,8 +1,8 @@
-//             +-- -- --++-- +-In the name of ALLAH-+ --++-- -- --+
+/*             +-- -- --++-- +-In the name of ALLAH-+ --++-- -- --+             */
 /**
 * author:TheAnonymousAMGR
 **/
-//CSTE
+/* CSTE */
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long int ll;
@@ -33,57 +33,26 @@ typedef long long int ll;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 void answer()
 {
-    // int n;
-    //     cin >> n;
-    //     string soja;
-    //     cin >> soja;
-
-    //     string ulta = "";
-    //     for(char c : soja) {
-    //         if(ulta.find(c) == string::npos)
-    //         {
-    //             ulta += c;
-    //         }
-    //     }
-
-    //     srt(ulta);
-    //     int len = ulta.length();
-    //     for(int i = 0; i < n; i++) 
-    //     {
-    //         soja[i] = ulta[len - 1 - (ulta.find(soja[i]))];
-    //     }
-
-    //     cout << soja << endl;
     int n;
-    cin>>n;
-    string s,r;
-    cin>>s;
-    set<char>Set;
-
-    for(auto c:s)
+    //scanf("%d",&n);
+    cin>>n; 
+    vector<int>v(n);
+    for(int i=0;i<n;i++)
     {
-        Set.insert(c);
+        //scanf("%d",&v[i]);
+        cin>>v[i];
     }
-    for(auto c: Set)
+    int res=0;
+
+    for(int i=0;i<n-1;i++)
     {
-        r+=c;
+        res=max(res,min(v[i],v[i+1]));
     }
-
-    unordered_map<char,char>mp;
-    int nn=r.size();
-    //mp[r[(n+1)/2]]=r[(n+1)/2];
-
-    for(int i=0;i<nn;i++)
+    for(int i=0;i<n-2;i++)
     {
-        mp[r[i]]=r[(nn-1)-i];
+        res=max(res,min(v[i],v[i+2]));
     }
-
-    for(int i=0;i<s.size();i++)
-    {
-        s[i]=mp[s[i]];
-    }
-    cout<<s<<endl;
-
+    cout<<res<<"\n";
 }
 int main()
 {
@@ -91,4 +60,4 @@ int main()
     tc
     answer();
 }
-/*                    cout<<That's it. Keep coding:)<<endl;                      */
+/*   ++  --  ++  --  ++  cout<<That's it. Keep coding:)<<endl;  ++  --  ++  --  ++     */
