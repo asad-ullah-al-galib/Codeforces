@@ -31,53 +31,28 @@ typedef long long int ll;
 #define lb lower_bound
 #define ub upper_bound
 #define pr pair<int,int>
-#define yes cout<<"YES"<<endl;
-#define no cout<<"NO"<<endl;
+#define yes cout<<"Yes"<<endl;
+#define no cout<<"No"<<endl;
 #define ponde cout<<res<<endl;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 /*_________________________________________________________________________________________________________________________*/
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
-    int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
-        }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
+    int n; cin>>n;
+    string s; cin>>s;
+    int res=0;
+    loop 
+    {
+        if(s[i]=='1') res++;
+        else if(s[i+1]!='0') res--;
     }
-    yes;
-    return;
+    if(res>0) yes
+    else no
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    test(answer);
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

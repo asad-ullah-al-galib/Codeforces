@@ -36,48 +36,41 @@ typedef long long int ll;
 #define ponde cout<<res<<endl;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 /*_________________________________________________________________________________________________________________________*/
+int round_up(int n) 
+{
+    return (n % 2 == 0) ? n : n + 1;
+}
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
-    int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
-        }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
-    }
-    yes;
-    return;
+    string s,ss;
+    cin>>s>>ss;
+     int res=count(s.begin(),s.end(),'1');
+     int ress=count(ss.begin(),ss.end(),'1');
+    // int cnt=count(s.begin(),s.end(),'0');
+    // int cntt=count(ss.begin(),ss.end(),'0');
+
+    // //if(cnt==0 or cntt==0) yes
+    // if (res>=ress) yes
+    // else if ((cnt==0 && cntt=0) and (ress>res)) no
+    // else no  
+    // if (res >= ress)
+    //     cout << "YES" << endl;
+    // //else if ((cnt == 0 && cntt == 0) && (ress > res))
+    //     //cout << "NO" << endl;
+    // else
+    //     cout << "NO" << endl;
+    // if (round_up(res >= ress)) yes
+    // else no
+    //cout << ((round_up(s.find('1')) >= ss.find('1')) ? "YES" : "NO") <<endl;
+    res+=res&1;
+    if(res>=ress) yes
+    else no
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    //test(answer);
+    answer();
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

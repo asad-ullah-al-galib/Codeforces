@@ -36,48 +36,66 @@ typedef long long int ll;
 #define ponde cout<<res<<endl;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 /*_________________________________________________________________________________________________________________________*/
+const int N=2e5+20;
+ll n,v[3][N];
+ll res,bob[3],alice[3];
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
-    int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
+    res=0;
+    cin>>n;
+    for(ll i=0;i<3;i++)
+    {
+        for(ll j=0;j<n;j++)
+        {
+            cin>>v[j][i];
+            if(not i) res+=v[i][j];
         }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
     }
-    yes;
-    return;
+    iota(bob,bob+3,0); // start to 0 and increase element by 1
+
+    bool f=0;
+
+    do 
+    {
+        ll cur=0,ptr=0,sum=0;
+        vector<ll>vv;
+        while(ptr<n)
+        {
+            sum+=v[bob[cur]][ptr];
+            if(sum*3>=res)
+            {
+                vv.pb(ptr);
+                cur++;
+                sum=0;
+            }
+            if(cur==0)break;
+            ptr++;
+        }
+        if (cur == 3) 
+        {
+				vv[2] = n - 1;
+				ll last = 0;
+				for (ll i = 0; i < 3; i++) 
+                {
+					alice[2 * bob[i]] = last;
+					alice[2 * bob[i] + 1] = vv[i];
+					last = vv[i] + 1;
+				}
+ 
+				for (ll i = 0; i < 6; i++) cout << alice[i] + 1 << ' ';
+				cout << '\n';
+ 
+				f = true;
+				break;
+		}
+    }
+    while(next_permutation(bob,bob+3));
+    if(!f) cout<<"-1"<<endl;
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    test(answer);
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

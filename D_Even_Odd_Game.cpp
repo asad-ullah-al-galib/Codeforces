@@ -38,46 +38,37 @@ typedef long long int ll;
 /*_________________________________________________________________________________________________________________________*/
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
     int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
+    cin>>n;
+    vec(v);
+    //srt(v);
+    sort(v.begin(),v.end(),greater<>());
+    ll res=0;
+    loop 
+    {
+        if(v[i]%2 == i%2)
+        {
+            if(i&1)
+            {
+                res+=v[i];
+            }
+            else res-=v[i];
         }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
     }
-    yes;
-    return;
+    if(res>0)
+    {
+        cout<<"Bob"<<endl;
+    }
+    else if(res==0)
+    {
+        cout<<"Tie"<<endl;
+    }
+    else cout<<"Alice"<<endl;
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    test(answer);
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

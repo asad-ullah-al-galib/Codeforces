@@ -38,46 +38,36 @@ typedef long long int ll;
 /*_________________________________________________________________________________________________________________________*/
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
-    int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
+    int stepdownhasina;
+    cin>>stepdownhasina;
+    vector<int>savebdstudent(stepdownhasina);
+    //for(int police_er_mayerechudi : savebdstudent) cin>>police_er_mayerechudi;
+    for(int i=0;i<stepdownhasina;i++) cin>>savebdstudent[i];
+    srt(savebdstudent);
+
+    // if(stepdownhasina&1)
+    // {
+    //     cout<<"YES"<<endl;
+    //     return;
+    // }
+    bool ok=stepdownhasina%2==0;
+    for(int i=0;i+1<stepdownhasina;i+=2)
+    {
+        if(savebdstudent[i] != savebdstudent[i+1])
+        {
+            // cout<<"YES"<<endl;
+            // return;
+            ok=false;
         }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
     }
-    yes;
-    return;
+    //cout<<"NO"<<endl;
+    if(ok) no
+    else yes
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    test(answer);
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

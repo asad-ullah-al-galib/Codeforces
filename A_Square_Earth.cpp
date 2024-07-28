@@ -38,46 +38,63 @@ typedef long long int ll;
 /*_________________________________________________________________________________________________________________________*/
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
-    int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
-        }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
-		}
-        swap(p, q);
+    int n, x1, x2, y1, y2, ans = 0;
+    cin >> n >> x1 >> x2 >> y1 >> y2;
+
+    if (x1 == x2 and (x1 == n or x1 == 0))
+        ans = abs(y2 - y1);
+    else if (y1 == y2 && (y1 == n || y1 == 0))
+    {
+        ans = abs(x1 - x2);
     }
-    yes;
-    return;
+    else if (x1 == 0 && x2 == n || x1 == n && x2 == 0)
+    {
+        ans = min(3 * n - y1 - y2, y1 + y2 + n);
+    }
+    else if (y1 == 0 && y2 == n || y1 == n && y2 == 0)
+    {
+        ans = min(3 * n - x1 - x2, x1 + x2 + n);
+    }
+    else if (x1 == 0 && y2 == 0)
+    {
+        ans = x2 + y1;
+    }
+    else if (x1 == n && y2 == n)
+    {
+        ans = 2 * n - x2 - y1;
+    }
+    else if (x1 == 0 && y2 == n)
+    {
+        ans = x2 + n - y1;
+    }
+    else if (x1 == n and y2 == 0)
+    {
+        ans = n - x2 + y1;
+    }
+    else if (x2 == 0 and y1 == 0)
+    {
+        ans = x1 + y2;
+    }
+    else if (x2 == n and y1 == n)
+    {
+        ans = 2 * n - x1 - y2;
+    }
+    else if (x2 == 0 and y1 == n)
+    {
+        ans = x1 + n - y2;
+    }
+    else if (x2 == n && y1 == 0)
+    {
+        ans = n - x1 + y2;
+    }
+    else ans=n+y1;
+    cout<<ans<<endl;
 }
 int main()
 {
     AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    //test(answer);
+    answer();
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */

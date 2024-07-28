@@ -36,48 +36,56 @@ typedef long long int ll;
 #define ponde cout<<res<<endl;
 #define AMGR()	(ios_base::sync_with_stdio(false),cin.tie(NULL))
 /*_________________________________________________________________________________________________________________________*/
+int res,ress;
 void answer()
 {
-	// ll p, q; cin >> p >> q;
-	// int n; cin >> n;
-	// for(int i = 0; i < n; i++) {
-	// 	if(!q) return false;
-	// 	ll a; cin >> a;
-	// 	p -= a * q;
-	// 	if(p < 0) return false;
-	// 	swap(p, q);
-	// }
-	// return q == 0;
-    ll p, q;
-    cin >> p >> q;
     int n;
-    cin >> n;
-    loop
-	{
-        ll a;
-        cin >> a;
-        if (not q) 
-		{
-            no;
-            return ;
-        }
-        p -=a*q;
-		if(p<0) 
-		{
-			no;
-			return;
+    cin>>n;
+    for(int i=1;i<=n;++i)
+    {
+		int a;
+		cin>>a;
+		if(a==1)
+        {
+			res++;
 		}
-        swap(p, q);
-    }
-    yes;
-    return;
+        else
+        {
+			ress++;
+		}
+	}
+	if(!res)
+    {
+		loop1
+        {
+			printf("2 ");
+		}
+	}
+    else if(!ress)
+    {
+		loop1
+        {
+			printf("1 ");
+		}
+	}
+    else
+    {
+		printf("2 1 ");
+		for(int i=1;i<=ress-1;i++)
+        {
+			printf("2 ");
+		}
+		for(int i=1;i<=res-1;i++)
+        {
+			printf("1 ");
+		}
+	}
 }
 int main()
 {
-    AMGR();
-    // if(answer()) cout<<"YES"<<endl;
-    // else cout<<"NO"<<endl;
-	answer();
+    // AMGR();
+    //test(answer);
+    answer();
 }
 /*_________________________________________________________________________________________________________________________*/
 /*                  ++  --  ++  --  ++  cout<<"That's it. Keep coding:)"<<endl;  ++  --  ++  --  ++            */
